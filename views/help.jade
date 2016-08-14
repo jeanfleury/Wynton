@@ -1,0 +1,13 @@
+extends authlayout
+
+block content
+
+  #homecontent-bottom
+    if type == 'admin'
+      p Administrator documentation can be found below.
+      p Any other questions can be directed to the Help Desk.
+      br
+      a(href='../uploads/adminhelp.docx') Download
+    else
+      p User documentation is still being compiled and will be available shortly.
+      p Please contact the help desk for any further questions.

@@ -1,0 +1,46 @@
+extends authlayout
+
+block content
+    #pageleft
+          h3 Hello
+          h3!= result[0].fname+' '+result[0].lname
+          br
+          p
+            | Welcome to your Wynton Magazine account.
+            br
+            br
+            | Please take note of our incredible security measures.
+        // END LEFT COLUMN
+    #pagemiddle
+      h3 Account Actions
+      br
+      ul.recent
+        // /articlestats has been moved to admin
+        if admin
+          li
+            a(href='../admin/articlestats') Article Stats
+        li
+          a(href='../users/editprofile') Edit Profile
+        li
+          a(href='../users/changepassword') Change Password
+        li
+          a(href='../logout') Logout
+        if admin
+          li
+            a(href='../users/help?type=admin') Help
+        else
+          li
+            a(href='../users/help?type=user') Help
+            //a(href='../users/help?type=admin') Help
+    // END MIDDLE COLUMN
+    if admin
+      #pageright
+        h3 User Management
+        br
+        ul.recent
+          li
+            a(href='../admin/listusers') List Users
+          li
+            a(href='../admin/lockbyusername') Lock User
+          li
+            a(href='../admin/logs') Logs

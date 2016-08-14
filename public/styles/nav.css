@@ -1,0 +1,182 @@
+/******************************************
+*   Main or page navigation styles                       
+******************************************/
+
+/*Main Navbar page navigation */
+
+#nav {
+	background:#444;
+	font-size:1em;
+	border-top:2px solid #C29704;
+	border-bottom:2px solid #C29704;
+	}
+	
+#nav, #nav ul {
+	list-style: none;
+	line-height: 1;
+	}
+
+#nav a, #nav a:hover {
+	display: block;
+	text-decoration: none;
+	border:none;
+	}
+
+#nav li {
+	float: left;
+	list-style:none;
+	}
+
+#nav a, #nav a:visited {
+	display:block;
+	font-weight:bold;
+	color: #fff;
+	padding:6px 12px;
+	}
+
+#nav a:hover {
+	background-color:#333;
+	color:#C29704;
+	text-decoration:none;
+	}	
+
+#nav a:active {
+	color:#C29704;
+	text-decoration:none;
+	}	
+
+.current_page_item	a, #home .on  { 
+	/*background-color:#333;*/
+	color:#C29704!important;
+	text-decoration:none;
+	}
+	
+	
+	
+/* Dropdown Menus for child pages */		
+
+#nav li ul {/*first level dropdown*/
+	position: absolute;
+	z-index: 10;
+	left: -999em;
+	height: auto;
+	width: 174px;
+	border-bottom:1px solid #ccc;
+	}
+	
+#nav li ul ul {/*second level dropdown*/
+	margin: -2em 0 0 172px;
+	}
+
+#nav li:hover ul ul, #nav li.sfhover ul ul {
+	left: -999em;
+	}
+
+#nav li li {
+	width: 172px;
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	background:#444;
+	}
+
+#nav li li a, #nav li li a:visited {
+	font-weight:normal;
+	font-size:0.9em;
+	color:#fff;
+	}
+
+#nav li li a:hover, #nav li li a:active {
+	background:#333;
+	color:#a37f04;
+	}
+	
+#nav li:hover ul, #nav li li:hover ul, #nav li li li:hover ul, #nav li.sfhover ul, #nav li li.sfhover ul, #nav li li li.sfhover ul {left: auto;}
+
+a.main:hover {background:none;}
+
+
+
+/* Category navigation in Navbar */
+
+#catnav {
+	margin-top:0px;
+	background:#eee;
+	font-size:1em;
+	border-top:none;
+	}
+	
+#catnav, #catnav ul {
+	list-style: none;
+	line-height: 1;
+	}
+
+#catnav a, #catnav a:hover {
+	display: block;
+	text-decoration: none;
+	border:none;
+	}
+
+#catnav li {
+	float: left;
+	list-style:none;
+	}
+
+#catnav a, #catnav a:visited {
+	display:block;
+	font-weight:bold;
+	color: #666;
+	padding:6px 12px;
+	}
+
+#catnav a:hover {
+	color:#a37f04;
+	text-decoration:none;
+	}	
+
+#catnav a:active {
+	color:#a37f04;
+	text-decoration:none;
+	}	
+
+
+	
+/* Dropdown Menus for categories  */
+		
+
+#catnav li ul {/*first level dropdown*/
+	position: absolute;
+	z-index: 10;
+	left: -999em;
+	height: auto;
+	width: 174px;
+	border-bottom:1px solid #fff;
+	}
+	
+#catnav li ul ul {/*second level dropdown*/
+	margin: -2em 0 0 172px;
+	}
+
+#catnav li:hover ul ul, #catnav li.sfhover ul ul {
+	left: -999em;
+	}
+
+#catnav li li {
+	width: 172px;
+	border-top: 1px solid #fff;
+	border-right: 1px solid #fff;
+	border-left: 1px solid #fff;
+	background:#eee;
+	}
+
+#catnav li li a, #catnav li li a:visited {
+	font-weight:normal;
+	font-size:0.9em;
+	color:#666;
+	}
+
+#catnav li li a:hover, #catnav li li a:active {background:#ddd;}	
+	
+#catnav li:hover ul, #catnav li li:hover ul, #catnav li li li:hover ul, #catnav li.sfhover ul, #catnav li li.sfhover ul, #catnav li li li.sfhover ul {left: auto;}
+
+/*a.main:hover {background:none;}*/

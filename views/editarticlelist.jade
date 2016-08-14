@@ -1,0 +1,26 @@
+extends authlayout
+
+block content
+  #homecontent-bottom
+    h2 Your available articles:
+    table(style='width:50%')
+      tr
+        td
+          b Title
+        td
+          b Author
+        td
+          b Category
+        td
+          b Views
+      tbody
+        each result in results
+          tr
+            td
+              a(href='../articles/editarticle?id='+result['id'])= result['title']
+            td= result['author']
+            td= result['category']
+            td= result['views']
+            td
+              a(href='../articles/deletearticle?id='+result['id']) Delete
+              

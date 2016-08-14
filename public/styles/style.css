@@ -1,0 +1,686 @@
+/*  
+Theme Name: PRiNZ WyntonMagazine
+Theme URI: http://www.der-prinz.com/2008/03/15/new-magazine-style-theme-for-wordpress-wyntonmagazine-version-05-beta-available-now/
+Description: A premium magazine-style layout for Wordpress with multiple functionalities and additional page templates. "Brother" of my BranfordMagazine theme.
+Version: 1.0
+Author: Michael Oeser
+Author URI: http://www.der-prinz.com
+
+The CSS, XHTML and design is released under GPL:
+http://www.opensource.org/licenses/gpl-license.php
+
+Credits
+=======
+
+My very special thanks go out to all of you out there
+using the theme and sending me tons of emails telling me how great this theme is.
+
+THANK YOU ALL!!!
+
+
+/******************************************
+*   HTML Elements                         
+******************************************/
+
+* {
+	margin:0;
+	padding:0;
+	}
+
+body,html {
+	min-height:101%;
+	}
+	
+body {
+	background:/*url(images/backgrounds/bg_leadcontainer.jpg) repeat-x 0px 0px #252525*/ #eee;
+	color: #333;
+	padding: 13px 0 25px 0;
+	}
+
+body, select, input, textarea {
+	font: 12px Arial, Verdana, Sans-Serif;
+	line-height:1.5em;
+	}
+	
+p {	
+	margin: 15px 0;
+	}
+
+
+hr {
+	display: block;
+	height:4px;
+	background:#ddd;
+	border:0;
+	}
+
+small {
+	font-size: 0.9em;
+	padding:3px 0px;
+	}
+	
+/******* Hyperlinks ********************/
+
+/* standard link behaviour */
+a:link, a:active, a:visited { 
+	color:#333;
+	text-decoration: underline; 
+	} 
+a:hover	{ 
+	color:#333;
+	text-decoration: none; 
+	}
+
+/* How the links in the leadstory area on the homepage look like */
+#leadcontainer a {color:#fff;}
+
+/* Title area links */
+.title:link, .title:active, .title:visited { 
+	color: #a37f04; 
+	text-decoration: none;
+	} 
+.title:hover { 
+	color: #a37f04; 
+	text-decoration: underline;
+	} 
+	
+/* HTML headline links */
+h3 a:link, h3 a:active, h3 a:visited  {text-decoration:none;}
+h3 a:hover {text-decoration:underline;}
+
+h4 a:link, h4 a:active, h4 a:visited  {color:#666; text-decoration:none;}
+h4 a:hover {text-decoration:underline;}
+
+/* Links in the sidebar */
+#sidelist a:link, #sidelist a:active, #sidelist a:visited {text-decoration:none;}
+#sidelist a:hover {text-decoration:underline;}
+#sidelist .children li a, #sidelist .children li a:visited {
+	padding:2px 2px 2px 0px;
+	border:0;
+	background:#eee;
+	color: #666;
+	}
+#sidelist .children li a:hover, #sidelist .children li a:active	{color:#000;}
+
+/* How tags appear */
+#tags a {text-decoration:none;}
+#tags a:hover {text-decoration:underline;}
+
+/* Links within comments metadata (date, Author etc.) */
+.commentmetadata a:link, .commentmetadata a:active, .commentmetadata a:visited  {text-decoration:none;}
+.commentmetadata a:hover {text-decoration:underline;}
+
+/* Links in the footer */
+#footer a {text-decoration: none;} 
+#footer a:hover	{text-decoration: underline;}
+
+
+/****** Images ****************************/
+
+img, a:link img, a:visited img{border:1px solid #999; padding:1px;}
+img.left,img.center,img.right,img.norm{ margin:5px 12px 5px 0; border:1px solid #999; padding:1px;}
+img.left{ float:left; margin:0 12px 5px 0; }
+img.center{ display:block; margin:0 auto 5px auto; }
+img.right{ float:right; margin:0 0 5px 12px; }
+#leadpic {float:left;margin: 0 20px 10px 0;padding:1px;border:1px solid #999;}
+.home-cat-img {float:left; margin:0 6px 4px 0;}
+
+	
+		
+/******************************************
+*   Main Element Structure                         
+******************************************/
+
+#page { /* main container */
+	width:940px;
+	margin:0 auto;
+	font-size:1em;
+	background:#FFF;
+	padding: 10px 20px 40px 20px;
+	border-top:4px solid #999;
+	border-bottom:4px solid #999;
+	}
+
+#branding {/* Where the logo is located */
+	width:625px;
+	height:100px;
+	padding-bottom:15px;
+	background:url(../images/backgrounds/bg_branding.png) no-repeat;
+	}
+
+.left {
+	float:left;
+	}
+
+.right {
+	float:right;
+	}
+
+#sidebar {
+	width: 240px;
+	float:right
+	}
+
+
+/* The 3 columns on the homepage */
+
+#homeleftcol {
+	width:30%;
+	border-right:1px solid #ccc;
+	padding-right:20px;
+	text-align:justify;
+	float:left;
+	}
+	
+#homemidcol {
+	width:30%;
+	padding:0 20px 0 20px;
+	text-align:justify;
+	float:left;
+	}
+	
+#homerightcol {
+	width:30%;
+	border-left:1px solid #ccc;
+	padding-left:20px;
+	text-align:justify;
+	float:right;
+	}
+		
+	
+/******************************************
+*   Sidebar stuff exept hyperlinks                        
+******************************************/
+	
+#sidelist li {list-style:none}
+	
+.bullets li {
+	list-style:none;
+	border-bottom:1px solid #FFF;
+	}
+	
+#sidelist .bullets li {
+	list-style:square;
+	margin-bottom:5px;
+	margin-left:22px;
+	}
+
+#sidelist .children {background:#eee;}
+
+#sidelist .children li {
+	background: #eee;
+	list-style: none;
+	margin-left:15px;
+	padding-left:15px;
+	border-bottom:1px solid #fff;
+	}
+	
+#sidelist .recent li{
+	margin-bottom:5px;
+	padding-left:20px;
+	background:url(images/icons/icon_recent.gif) no-repeat;
+	}
+
+#sidelist .recent-comments li{
+	margin-bottom:5px;
+	padding-left:20px;
+	background:url(images/icons/icon_comment.gif) no-repeat;
+	}
+
+#sidelist .more li{
+	margin-bottom:5px;
+	padding-left:20px;
+	background:url(images/icons/icon_categories.gif) no-repeat;
+	}
+
+#sidelist .feed li{
+	margin-bottom:5px;
+	padding-left:20px;
+	background:url(images/icons/rss.gif) no-repeat;
+	}
+	
+	
+	
+/******************************************
+*   All Headlines and related stuff                         
+******************************************/
+
+.leadmeta, .leadmeta a {/* That´s how the Date and Author appear in the leadarticle section above the Headline */
+	font: 0.9em Arial, Helvetica, sans-serif;
+	margin-top:-4px;
+	color:#ddd;
+	text-decoration:none;
+	}
+	
+.blogtitle, .blogtitle a {/* That´s only relevant, if you don´t use an image for your Logo in the header */
+	color: #000;
+	font-size: 1.8em;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: regular;
+	padding: 20px 0px 10px 0px;
+	text-decoration:none;
+	}
+
+.cat-head {/* Background for the category teasers headline on the homepage */
+	margin-bottom:3px;
+	background-color:#ddd;
+	padding:3px 2px 1px 4px;
+	}
+
+h1 {
+	color: #a37f04;
+	font-size: 1.6em;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: bold;
+	margin: 0px 10px 0px 0px;
+	padding: 20px 0px 0px 10px;
+	}
+	
+h2 {
+	color: #a37f04;
+	font: 1.6em Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	padding-bottom:8px;
+	border-bottom:4px solid #ddd;
+	margin: 20px 0;
+	}
+
+h3 {
+	font: 0.9em Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+	letter-spacing:0.1em;
+	margin-bottom:4px;
+	font-weight:bold;
+	color:#a37f04;
+	}
+
+#sidebar h2, #sidebar h3 a {
+	font: 0.9em Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+	letter-spacing:0.1em;
+	margin-bottom:4px;
+	font-weight:bold;
+	color:#a37f04;
+	}
+
+#sidebar h3, #sidebar h2 {
+	font-size:0.9em;
+	border-top:4px solid #ddd;
+	border-bottom:1px solid #ddd;
+	padding:5px 0 5px 2px;
+	margin:20px 0 15px 0;
+	color:#a37f04;
+	}
+
+h3#respond {
+	border-top:4px solid #ddd;
+	margin-top:25px;
+	padding-top:20px
+	}
+
+h3#comments {
+	margin-top:32px
+	}
+
+h4 {
+	color:#444;
+	font-size:1.2em;
+	margin-bottom:6px;
+	}
+	
+	
+/******************************************
+*   Content styles                    
+******************************************/
+
+/* some structural styles for the content area */
+
+#content {/* main content (left of sidebar) */
+	width:640px;
+	float:left
+	}
+
+#pagecontent { /* content area in static pages (without sidebar) */
+	width:820px;
+	float:left;
+	}
+
+#homecontent-top {/* The upper area on the homepage */
+	width:940px;
+	margin-top:25px;
+	}
+	
+#homecontent-bottom {/* The lower area f the homepage */
+	width:900px;
+	margin-top:20px;
+	}
+
+#homecontent-topleft {/* The left side of the upper area (where the leadstory area is located) */
+	width: 600px;
+	}
+
+#homecontent-topright {/* The right upper area (where the three feature boxes appear) */
+	width: 300px;
+	}
+	
+
+
+/* The lead story on the honmepage */
+
+#leadcontainer {
+	background:/*url(images/backgrounds/bg_leadcontainer.jpg) repeat-x 0px 0px #252525 */ #444;
+	color:#ddd;
+	border-top:4px solid #C29704;
+	border-bottom:4px solid #C29704;
+	padding:15px;
+	width:592px;
+	min-height:350px;
+	}
+
+#leadcontainer:hover {
+	background:#333;
+	border-top:4px solid #C29704;
+	border-bottom:4px solid #C29704;
+	}
+
+#leadcontainer .title {
+	font:2.2em Georgia, "Times New Roman", Times, serif;
+	line-height:100%;
+	display:block;
+	padding-bottom:7px;
+	color: #C29704;
+	}
+
+#leadheader {
+	display:block;
+	}
+
+#leadheader a {color:#ddd;}
+
+#homebottom {/* That´s the nice shadow below the leadcontainer */
+	width:625px;
+	height:60px;
+	background:url(../images/backgrounds/homebottom.png);
+	}
+	
+
+.read-on a { /* This can be used to format the "continue readng..." link in the lead story */
+	text-decoration:none;
+	}
+	
+.read-on a:hover {color:#C29704!important;}
+
+	
+/* Featured Articles formatting in "hometop-rightcol" */
+
+.feature {
+	background: #eee;
+	padding:10px 10px 10px 20px;
+	border-top:2px solid #ccc;
+	border-bottom:2px solid #ccc;
+	}
+
+.feature:hover {
+	background:#ddd;
+	border-top:2px solid #999;
+	border-bottom:2px solid #999;
+	}
+
+/*.feature p { margin:0;	}*/
+
+#hometop-rightcol img {
+	margin-bottom:4px;
+	padding:1px;
+	border:1px solid #999;
+	}
+
+#hometop-rightcol .feature {margin-bottom: 10px;}
+
+#hometop-rightcol.title, #hometop-rightcol a.title  {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size:1.4em;
+	color: #a37f04;
+	margin:10px 0 15px 0;
+	}
+
+/**********************************************************/
+	
+.description {
+	font-size: 1.3em;
+	font-weight: bold; 
+	color:#999;
+	}
+		
+.title, a.title  {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size:1.4em;
+	color: #a37f04;
+	margin:10px 0 15px 0;
+	}
+		
+#homemidcol .clearfloat, #homeleftcol .clearfloat, #homerightcol .clearfloat {
+	border-bottom:1px solid #ccc;
+	padding:12px 0;
+	}	
+
+/* Pagination formats for the achives (previous and next links) */	
+
+.navigation a {
+	width: 120px;
+	border: 1px dotted #ccc;
+	padding:2px 4px 2px 4px;
+	text-align:center;
+	font-size:0.9em;
+	text-decoration:none;
+	color:#666;
+	}
+
+.navigation a:hover {
+	background-color:#eee;
+	}
+
+.preventries {
+	float:left;
+	}
+
+.nextentries {
+	float:right;
+	}
+	
+
+/*Post Formatting*/
+
+.entry {
+	padding-bottom:28px;
+	text-align:justify;
+	}
+
+.post blockquote {
+	color:#666;
+	padding:6px 14px;
+	margin:18px 35px;
+	border-top:1px solid #DDD;
+	border-bottom:1px solid #DDD;
+	}	
+
+.post ul li {
+	list-style:square;
+	margin-bottom:5px;
+	margin-left:42px;
+	}
+
+.post ol li {
+	margin-bottom:5px;
+	margin-left:48px;
+	}
+	
+#tags {
+	padding:5px;
+	background-color:#eee;
+	border-bottom:1px solid #999;
+	border-top:1px solid #999;	
+	}	
+		
+.postmetadata {margin: 30px 0;}
+	
+
+/* Form Elements */
+
+select {
+	background:#eee;
+	border-top:2px solid #999;
+	border-bottom:2px solid #999;
+	border-left:none;
+	border-right:none;
+	width:100%
+	}
+	
+
+#searchform {padding:16px 5px 0 0;}
+
+.searchbutton {
+	font-weight:bold;
+	padding: 1px;
+	background:#fff;
+	color:#999;
+	border:1px solid #ddd;
+	}
+
+.searchbutton:hover {
+	color:#666;
+	background:#eee;
+	border:1px solid #999;
+	text-decoration:none;
+	}
+
+.searchfield {
+	width:150px;
+	padding: 1px 1px 1px 20px;
+	background: url(../images/icons/search-16.png) no-repeat #fff;
+	color:#666;
+	border:1px solid #ddd;
+	}
+
+.searchfield:hover, .searchfield:focus {
+	background: url(images/icons/search-16.png) no-repeat #eee;
+	border:1px solid #999;
+	text-decoration:none;
+	}
+
+
+.button {
+	font-weight:bold;
+	padding: 1px;
+	background:#fff;
+	color:#666;
+	border-top:2px solid #ddd;
+	border-bottom:2px solid #ddd;
+	border-left:none;
+	border-right:none;
+	}
+
+.button:hover {
+	color:#333;
+	background:#eee;
+	border-top:2px solid #999;
+	border-bottom:2px solid #999;
+	border-left:none;
+	border-right:none;
+	text-decoration:none;
+	}
+
+#commentform input {
+	width: 170px;
+	margin: 5px 5px 1px 0;
+	border-top:2px solid #ddd;
+	border-bottom:2px solid #ddd;
+	border-left:none;
+	border-right:none;
+	}
+
+#commentform textarea {
+	background:#eee;
+	width: 100%;
+	margin-top:5px;
+	border-top:2px solid #ddd;
+	border-bottom:2px solid #ddd;
+	border-left:none;
+	border-right:none;
+	}
+
+#commentform textarea:hover, #commentform textarea:focus {background:#fff;}
+
+
+/* Comments*/
+
+.commentlist {
+	padding-left:30px;
+	}
+	
+.commentlist li {
+	margin: 15px 0 3px;
+	padding: 8px 15px 10px 15px;
+	background:#eee;
+	border-top:1px solid #999;
+	border-bottom:1px solid #999;
+	}
+
+#commentform small {
+	background:#FFF;
+	font-weight:bold;
+	padding:0;
+	}
+	
+.commentmetadata {
+	display: block;
+	}
+
+.commentlist small {
+	background:#fff;
+	padding:2px 5px 2px 5px;
+	border-top:1px solid #999;
+	border-bottom:1px solid #999;
+	}
+
+.commentlist cite { font-weight:bold; }	
+	
+
+/* Float Properties*/
+
+.clear {
+	clear:both;
+	}
+
+.clearfloat:after {
+	display:block;
+	visibility:hidden;
+	clear:both;
+	height:0;
+	content:".";
+	}
+
+.clearfloat {/*never delete this otherwise MSIE will kill the layout */
+	display:inline-block;
+	}	
+
+.clearfloat {/*never delete this otherwise MSIE will kill the layout */
+	display:block;
+	}
+	
+	
+/******************************************
+*   Footer                        
+******************************************/
+
+#footer {
+	margin: 0 auto;
+	width: 900px;
+	font-size:0.9em;
+	text-align:center;
+	padding-top:15px;
+	color:#666;
+	}
+
+#footer a {
+	color:#333;
+	}

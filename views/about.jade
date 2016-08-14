@@ -1,0 +1,116 @@
+doctype transitional
+html(xmlns='http://www.w3.org/1999/xhtml', dir='ltr', lang='en-EN')
+  head(profile='http://gmpg.org/xfn/11')
+    title Wynton Magazine
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    link(rel='stylesheet', href='styles/style.css', type='text/css', media='screen')
+    link(rel='stylesheet', href='styles/nav.css', type='text/css', media='screen')
+    link(rel='stylesheet', href='styles/plugins.css', type='text/css', media='screen')
+    link(rel='stylesheet', href='styles/template-style.css', type='text/css', media='screen')
+    link(rel='stylesheet', href='styles/print.css', type='text/css', media='print')
+    script(type='text/javascript', src='js/dropdowns.js')
+  body#home
+    #page.clearfloat
+      .clearfloat
+        #branding.left(onclick="location.href='#';", style='cursor: pointer;')
+          .blogtitle
+            a(href='#')
+          .description
+        .right
+          form#searchform(method='get', action='search')
+            div
+              input#s.searchfield(type='text', value='', name='s')
+      if auth
+        ul#nav.clearfloat
+          li
+            a.on(href='/') Home
+          li.page_item
+            a(href='../users') Users
+            ul
+              li.page_item
+                a(href='../users/editprofile') Edit Profile
+              li.page_item
+                a(href='../users/changepassword') Change Password
+          li.page_item
+            a(href='#') Editor
+            ul
+              li.page_item
+                a(href='../articles/writearticle') Write New Article
+              li.page_item
+                a(href='../articles/editarticle') Edit Article
+              li.page_item
+                a(href='../articles/drafts') Drafts
+              li.page_item
+                a(href='../articles/upload') Upload
+          li.page_item
+            a(href='../archives') Archives
+          li.page_item
+            a(href='../about?render=about') About Us
+          li.page_item
+            a(href='../logout') Logout
+      else
+        ul#nav.clearfloat
+          li
+            a.on(href='/') Home
+          li.page_item
+            a(href='users') Users
+            ul
+              li.page_item
+                a(href='../login') Login
+              li.page_item
+                a(href='../register') Register
+              li.page_item
+                a(href='../forgotpassword') Forgot Password
+          li.page_item
+            a(href='../archives') Archives
+          li.page_item
+            a(href='../about') About Us
+      ul#catnav.clearfloat
+        li.cat-item
+          a(href='#') News
+        li.cat-item
+          a(href='#') Lifestyle
+        li.cat-item
+          a(href='#') Politics
+        li.cat-item
+          a(href='#') Economy
+        li.cat-item
+          a(href='#') Sports
+        li.cat-item
+          a(href='#') Beauty
+        li.cat-item
+          a(href='#') Automotive
+      #pageleft
+        h3= results[0].title
+        a.title(href='#')= results[0].name
+        br
+        p= results[0].bio
+          br
+          br
+        ul.recent
+          li
+            img(src=results[0].image, height=75, width=75)
+      // END LEFT COLUMN
+      #pagemiddle
+        h3= results[1].title
+        a.title(href='#')= results[1].name
+        br
+        p= results[1].bio
+          br
+          br
+        ul.recent
+          li
+            img(src=results[1].image, height=75, width=75)
+      // END MIDDLE COLUMN
+      #pageright
+        h3= results[2].title
+        a.title(href='#')= results[2].name
+        br
+        p= results[2].bio
+          br
+          br
+        ul.recent
+          li
+            img(src=results[2].image, height=75, width=75)
+      // END RIGHT COLUMN
+      //New editabout feature completed and pushed to prod

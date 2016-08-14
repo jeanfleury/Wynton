@@ -1,0 +1,26 @@
+extends authlayout
+
+block content
+  if error
+    p= error
+  if success
+    p File successfully uploaded!
+
+  #homecontent-bottom
+    form(method='post', action='./upload', enctype='multipart/form-data')
+      div
+        | Select your article to upload:
+        br
+        br
+        input(type='file', name='article')
+      div
+        br
+        input(type='submit', value='Upload')
+    div
+      br
+      br
+      a(href='../users/') Cancel
+
+  #footer
+    div
+      div

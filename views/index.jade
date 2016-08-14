@@ -1,0 +1,194 @@
+doctype transitional
+html(xmlns='http://www.w3.org/1999/xhtml', dir='ltr', lang='en-EN')
+  head(profile='http://gmpg.org/xfn/11')
+    title Wynton Magazine
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    link(rel='stylesheet', href='../styles/style.css', type='text/css', media='screen')
+    link(rel='stylesheet', href='../styles/nav.css', type='text/css', media='screen')
+    link(rel='stylesheet', href='../styles/plugins.css', type='text/css', media='screen')
+    link(rel='stylesheet', href='../styles/template-style.css', type='text/css', media='screen')
+    link(rel='stylesheet', href='../styles/print.css', type='text/css', media='print')
+    script(type='text/javascript', src='../js/dropdowns.js')
+    style.
+      form {margin: 0 auto; width:250px;}
+  body#home
+    #page.clearfloat
+      .clearfloat
+        #branding.left(onclick="location.href='#';", style='cursor: pointer;')
+          .blogtitle
+            a(href='#')
+          .description
+        .right
+          form#searchform(method='get', action='../search')
+            div
+              input#s.searchfield(type='text', value='', name='s')
+      if auth
+        ul#nav.clearfloat
+          li
+            a.on(href='/') Home
+          li.page_item
+            a(href='../users') Users
+            ul
+              li.page_item
+                a(href='../users/editprofile') Edit Profile
+              li.page_item
+                a(href='../users/changepassword') Change Password
+          li.page_item
+            a(href='#') Editor
+            ul
+              li.page_item
+                a(href='../articles/writearticle') Write New Article
+              li.page_item
+                a(href='../articles/editarticle') Edit Article
+              li.page_item
+                a(href='../articles/drafts') Drafts
+              li.page_item
+                a(href='../articles/upload') Upload
+          li.page_item
+            a(href='../archives') Archives
+          li.page_item
+            a(href='../about?render=about') About Us
+          li.page_item
+            a(href='../logout') Logout
+      else
+        ul#nav.clearfloat
+          li
+            a.on(href='/') Home
+          li.page_item
+            a(href='users') Users
+            ul
+              li.page_item
+                a(href='../login') Login
+              li.page_item
+                a(href='../register') Register
+              li.page_item
+                a(href='../forgotpassword') Forgot Password
+          li.page_item
+            a(href='../archives') Archives
+          li.page_item
+            a(href='../about?render=about') About Us
+      ul#catnav.clearfloat
+        li.cat-item
+          a(href='#') News
+        li.cat-item
+          a(href='#') Lifestyle
+        li.cat-item
+          a(href='#') Politics
+        li.cat-item
+          a(href='#') Economy
+        li.cat-item
+          a(href='#') Sports
+        li.cat-item
+          a(href='#') Beauty
+        li.cat-item
+          a(href='#') Automotive
+
+      #homecontent-top
+        #homecontent-topleft.left
+          #leadcontainer
+            // LEAD ARTICLE
+            #lead
+              ul
+                #leadheader
+                  h3
+                    a(href='#') News
+                    br
+                  span.leadmeta
+                    | Feb 8th, 2008 By
+                    a(href='#') Michael Oeser
+                  a.title(href='#')  Wynton Magazine - How the Lead Story works
+                a(href='#')
+                  img#leadpic(src='images/leadimage.jpg', alt='', width='350', height='250')
+                p
+                  | This is the lead story. It´s the first thing that catches your visitor´s eyes. Always the most recent post from the "News" category (or whatever category you define) will be displayed. You can add an image like this one by using custom fields. If you don´t know what custom fields are, take look at the
+                  a(href='#') WP-Codex here
+                  | . Only the excerpt of the article will be printed here for space reasons. It´s highly reccomended to use the optional excerpt for better text control.
+                .read-on
+                  a(href='#')  [ Continue reading... ]
+          #homebottom
+        #homecontent-topright.right
+          #hometop-rightcol
+            .feature
+              a(href='#')
+                img(src='images/featured_image03.jpg', alt='', width='258', height='80')
+              a.title(href='#')  About this theme
+            .feature
+              a(href='#')
+                img(src='images/featured_image02.jpg', alt='', width='258', height='81')
+              a.title(href='#')  Different page elements and formating
+            .feature
+              a(href='#')
+                img(src='images/featured_image01.jpg', alt='', width='258', height='80')
+              a.title(href='#')  Images and Lightbox
+      .clear
+      hr
+      .adsense-banner
+        img(src='images/adverts/728x90.gif', alt='advert')
+        input(name='pieceofwynton4', value='I4D0x4CpXBmQpPWRLFWm7koVKQ4jQMO3lBXf19tQcnqPJjcdMzN81tJFAXt3JPVi', type='hidden')
+      hr
+      #homecontent-bottom
+        #homeleftcol
+          .clearfloat
+            .cat-head
+              h3
+                a(href='?cat=3')  Lifestyle
+            a(href='#')
+              img.home-cat-img(src='images/home_category_image01.jpg', alt='', width='100', height='100')
+            a.title(href='#')  About this theme
+            br
+            |         WyntonMagazine is my second WordPress theme and the "brother" of my first theme BranfordMagazine. It is dedicated to Wynton Marsalis, American jazz trumpet player and brother of sax player Branford Marsalis. For that reason all ...
+          .clearfloat
+            .cat-head
+              h3
+                a(href='#')  Politics
+            a(href='#')
+              img.home-cat-img(src='images/home_category_image03.jpg', alt='', width='100', height='100')
+            a.title(href='#')  Testpost #14
+            br
+            |         This is a regular post. The following text is just dummy text taken from the speech "The Extremes of Good and Evil" by Cicero. But I must explain to you how all this mistaken idea of ...
+        // END LEFTCOL
+        #homemidcol
+          .clearfloat
+            .cat-head
+              h3
+                a(href='?cat=5')  Economy
+            a(href='#')
+              img.home-cat-img(src='images/home_category_image02.jpg', alt='', width='100', height='100')
+            a.title(href='#')  Use Images or leave it
+            br
+            |         It´s up to you whether you use images in this three colums of the homepage or not. At the end it´s always your choice if you use the powerful functionality of custom fields or not. ...
+          .clearfloat
+            .cat-head
+              h3
+                a(href='#')  Automotive
+            a(href='#')
+              img.home-cat-img(src='images/home_category_image01.jpg', alt='', width='100', height='100')
+            a.title(href='#')  Testpost #20
+            br
+            |         This is a regular post. The following text is just dummy text taken from the speech "The Extremes of Good and Evil" by Cicero. But I must explain to you how all this mistaken idea of ...
+        // END MIDCOL
+        #homerightcol
+          .clearfloat
+            .cat-head
+              h3
+                a(href='#')  Sports
+            a(href='#')
+              img.home-cat-img(src='images/home_category_image03.jpg', alt='', width='100', height='100')
+            a.title(href='#')  Testpost #17
+            br
+            |         This is a regular post. The following text is just dummy text taken from the speech "The Extremes of Good and Evil" by Cicero. But I must explain to you how all this mistaken idea of ...
+          .clearfloat
+            .cat-head
+              h3
+                a(href='#')  Beauty
+            a(href='#')
+              img.home-cat-img(src='images/home_category_image02.jpg', alt='', width='100', height='100')
+            a.title(href='#')  Testpost #23
+            br
+            |         This is a regular post. The following text is just dummy text taken from the speech "The Extremes of Good and Evil" by Cicero. But I must explain to you how all this mistaken idea of ...
+        // END RIGHTCOL
+        // END CONTENT
+    #footer
+      div
+        div
+        a(href='login') Log in

@@ -1,0 +1,36 @@
+extends unauthlayout
+
+block content
+  br
+  br
+  h3 Attention:
+  p Administrators will now use the standard user login.
+  p For questions, please contact the&nbsp
+    a(href='mailto:SirWynton@Wynton.com') admin
+  #homecontent-bottom
+    form#loginform(method='post', action='#')
+      div
+        | Username:
+        br
+        input#username(type='text', value='', name='username', disabled='disabled')
+      br
+      div
+        | Password:
+        br
+        input#password(type='password', value='', name='password', disabled='disabled')
+      br
+      div
+        | Token:
+        br
+        input#password(type='password', value='', name='password', disabled='disabled')
+      br
+      div
+        input(type='submit', value='Login', disabled='disabled')
+    div
+      br
+      br
+      a(href='../login') User Login
+
+  #footer
+    div
+      div

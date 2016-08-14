@@ -1,0 +1,23 @@
+User-agent: *
+Disallow: /You Found The Flag List!/
+Disallow: /Now You Need To Capture Them/
+Disallow: /Here Are Your Instructions/
+
+User-agent: TimeToBreakSh!t
+Allow: /Maintain a script injection in another user's article/Must contain your last name/100 points/
+Allow: /Reset another user's password/Set password to your last name/100 points/
+Allow: /Have the article with most views/100 points/
+Allow: /Change the 'About Us' page to include yourself/100 points/
+Allow: /Upload a meme to the 'images' folder with filename of your last name/100 points/
+Allow: /Find a log file and find the most common IP address/100 points/
+
+User-agent: Pieces of Wynton
+Allow: /There are 5 Pieces of Wynton hidden throughout the application/
+Allow: /Compile all 5 pieces in order and decrypt them to earn 200 points/
+Allow: /Algorithm: 3DES (192bit, 24 character key) Key: welc0m3tothejung!eASA123/
+Allow: /**Hint** AppScan may have a tool to help you complete this/
+
+User-agent: King of the Hill
+Allow: /Tired of the admin messing with you?/
+Allow: /Lock the admin's account to end the game/
+Allow: /Successfully locking the admin earns 500 points/

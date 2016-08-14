@@ -1,0 +1,48 @@
+extends authlayout
+
+block content
+
+  #homecontent-bottom
+    if success
+      h3 User successfully updated
+    form#userform(method='post', action='#')
+      div
+        | Username:
+        br
+        input#username(type='text', value=user[0].username, name='username')
+      br
+      div
+        | Email:
+        br
+        input#email(type='text', value=user[0].email, name='email')
+      br
+      div
+        | Password:
+        br
+        input#password(type='password', value=user[0].password, name='password')
+      br
+      div
+        | Admin:
+        br
+        input#admin(type='radio', name='admin', value='1', checked=user[0].admin==1)
+        | Yes
+        | &nbsp
+        input#admin(type='radio', name='admin', value='0', checked=user[0].admin==0)
+        | No
+      br
+      div
+        | Locked:
+        br
+        input#locked(type='radio', name='locked', value='1', checked=user[0].locked==1)
+        | Yes
+        | &nbsp
+        input#locked(type='radio', name='locked', value='0', checked=user[0].locked==0)
+        | No
+      br
+      div
+        input(type='submit', value='Save')
+
+  #footer
+    div
+      div
+        a(href='../logout') Logout

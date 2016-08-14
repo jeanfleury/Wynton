@@ -1,0 +1,53 @@
+extends authlayout
+
+block content
+  style.
+    div.container {
+    width: 30%;
+    }
+  #homecontent-bottom
+    if locked
+      script.
+        alert('User Locked!')
+    if unlocked
+      script.
+        alert('User Unlocked!')
+    h2 Available users:
+    table(style='width:75%')
+      tr
+        td
+          b Username
+        td
+          b Email
+        td
+          b Admin
+        td
+          b Locked
+      tbody
+        each user in users
+          if user['admin'] != 1
+            tr
+              td
+                a(href='../admin/edituser?id='+user['username'])= user['username']
+              td= user['email']
+              td= user['admin']
+              td= user['locked']
+              td
+                if user['locked'] == 0
+                  a(href='../admin/lockuser?id='+user['username']) Lock
+                else
+                  a(href='../admin/unlockuser?id='+user['username']) Unlock
+
+    br
+    br
+    div(onmouseover='showHint()', onmouseout='hideHint()', class='container')
+      span(id='hint') Hover For Hint
+
+    script.
+      function showHint() {
+      document.getElementById('hint').innerHTML = 'Content-Type and Content-Length are important';
+      }
+
+      function hideHint() {
+      document.getElementById('hint').innerHTML = 'Hover For Hint';
+      }

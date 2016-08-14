@@ -1,0 +1,8 @@
+extends authlayout
+
+block content
+  #section-content
+    p The current log file is shown below:
+    div(style='height:220px;width:520px;border:1px solid #ccc;overflow:auto;')= data
+    br
+    a(href='../users/') Cancel

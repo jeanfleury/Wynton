@@ -1,0 +1,49 @@
+extends unauthlayout
+
+block content
+      if error
+        h3= error
+      #homecontent-bottom
+        p Please fill in the required information to register for our website.
+        form#registerform(method='post', action='registeruser')
+          div
+            | Username:
+            br
+            input#username(type='text', value='', name='username')
+          p
+          div
+            | Password:
+            br
+            input#password(type='password', value='', name='password')
+          p
+          div
+            | Re-Enter Password:
+            br
+            input#password2(type='password', value='', name='password2')
+          p
+          div
+            | Email:
+            br
+            input#email(type='text', value='', name='email')
+          p
+          div
+            | First Name:
+            br
+            input#fname(type='text', value='', name='fname')
+          p
+          div
+            | Last Name:
+            br
+            input#lname(type='text', value='', name='lname')
+          p
+          input(type='submit', value='Submit')
+        div
+          br
+          br
+          br
+          a(href='forgotpassword') Forgot Password
+          br
+          a(href='login') Login
+      #footer
+        div
+          div

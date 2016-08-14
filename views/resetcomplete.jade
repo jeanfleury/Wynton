@@ -1,0 +1,16 @@
+extends unauthlayout
+
+block content
+
+  #homecontent-bottom
+    if error
+      p
+        strong= error
+    div
+      p Your username is:
+      p
+        strong= result[0].username
+      br
+    div
+      div
+        a(href='./login') Login

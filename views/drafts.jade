@@ -1,0 +1,24 @@
+extends authlayout
+
+block content
+
+  #homecontent-bottom
+    h2 Your available drafts:
+    if message
+      p= message
+    table(style='width:50%')
+      tr
+        td
+          b Title
+        td
+          b Category
+      tbody
+        each draft in drafts
+          tr
+            td
+              a(href='../articles/editarticle?id='+draft['id'])= draft['title']
+            td= draft['category']
+            td
+              a(href='../articles/deletedraft?id='+draft['id']) Delete
+            td
+              a(href='../articles/publishdraft?id='+draft['id']) Publish

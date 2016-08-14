@@ -1,0 +1,27 @@
+extends authlayout
+
+block content
+  if message
+    p= message
+  #homecontent-bottom
+    form(method='post', action='#')
+      div
+        | Username:
+        br
+        input#username(type='text', value='', name='username')
+      br
+      div
+        | Reason:
+        br
+        input#reason(type='text', value='', name='reason')
+      br
+      div
+        input(type='submit', value='Lock')
+    div
+      br
+      br
+      a(href='../users/') Cancel
+
+  #footer
+    div
+      div

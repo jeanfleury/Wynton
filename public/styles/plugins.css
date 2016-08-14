@@ -1,0 +1,23 @@
+/*STYLES FOR USED PLUGINS AND ADD-ONS*/
+
+/****** Images for flexible upload plugin *********/
+
+.imageframe {  margin:5px 12px 5px 0; padding:4px; border:1px solid #999; }
+.imgalignleft { float:left; margin:0 12px 5px 0; }
+.imgalignright { float:right; margin:0 0 5px 12px; }
+.imgaligncenter { display:block; margin:0 auto 5px auto; } 
+.imagecaption {padding: 2px 2px 0 2px; text-align: left; font-size:10px!important; color:#666!important;}
+
+
+/****** IMP Links plugin ************/
+
+
+
+
+
+/******* Google AdfSense styles **************/
+
+.adsense-banner {
+	padding: 4px;
+	text-align:center;
+	}

@@ -1,0 +1,24 @@
+extends authlayout
+
+block content
+  #homecontent-bottom
+    h2 All articles:
+    table(style='width:75%')
+      tr
+        td
+          b Title
+        td
+          b Author
+        td
+          b Views
+      tbody
+        each article in articles
+          tr
+            td
+              a(href='../articles/editarticle?id='+article['id'])= article['title']
+            td= article['author']
+            td= article['views']
+            td
+              a(href='../admin/resetcount?id='+article['id']) Reset
+            td
+              a(href='../admin/deletearticle?id='+article['id']) Delete

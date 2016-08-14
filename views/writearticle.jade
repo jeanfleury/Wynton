@@ -1,0 +1,29 @@
+extends authlayout
+
+block content
+  #section-content
+    if success
+      p Your article has been posted!
+    if savedraft
+      p Your draft has been saved!
+    form#articleform(method='post', action='#')
+      br
+      div
+        | Title:
+        br
+        input#title(type='text', value='', name='title')
+      br
+      div
+        | Category:
+        br
+        input#category(type='text', value='', name='category')
+      br
+      div
+        | Text:
+        textarea(rows='4', cols='50', name='text', form='articleform')
+      br
+      div
+        input(type='submit', value='Publish')
+        &nbsp
+        &nbsp
+        input(type='submit', value='Save Draft', formaction='../articles/savedraft')

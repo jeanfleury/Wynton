@@ -1,0 +1,45 @@
+extends authlayout
+
+block content
+
+      #homecontent-bottom
+        if success
+          h3 Profile successfully updated
+        form#profileform(method='post', action='#')
+          div
+            | Username:
+            br
+            input#username(type='text', value=username[0].username, name='username', disabled='disabled')
+          br
+          div
+            | Email:
+            br
+            input#email(type='text', value=username[0].email, name='email')
+          br
+          div
+            | First Name:
+            br
+            input#firstname(type='text', value=username[0].fname, name='fname')
+          br
+          div
+            | Last Name:
+            br
+            input#lastname(type='text', value=username[0].lname, name='lname')
+          br
+          div
+            | Security Question:
+            br
+            input#question(type='text', value=username[0].question, name='question')
+          br
+          div
+            | Security Answer:
+            br
+            input#answer(type='password', value=username[0].answer, name='answer')
+          br
+          div
+            input(type='submit', value='Save')
+
+      #footer
+        div
+          div
+            a(href='../logout') Logout

@@ -1,0 +1,54 @@
+extends unauthlayout
+
+block content
+
+  #homecontent-bottom
+    if method == "email"
+      p Please answer the security question to retrive your username.
+    if method == "username"
+      p Please answer the security question to reset your password.
+    if error
+      p
+        strong= error
+    if method == "username"
+      form#passwordform(method='post', action='/securityquestion?method=username')
+        div
+          i Question:
+          p= question
+        div
+          i Answer:
+          br
+          input#answer(type='password', value='', name='answer')
+          input#answer(type='hidden', value='', name='fname')
+          input#answer(type='hidden', value='', name='lname')
+          input(type='hidden', value= question, name='question')
+          br
+          br
+          input(type='submit', value='Find')
+    else
+      form#passwordform(method='post', action='/securityquestion?method=email')
+        div
+          i Question:
+          p Confirm your first and last name:
+        div
+          i First Name:
+          br
+          input#answer(type='text', value='', name='fname')
+          br
+          br
+          i Last Name:
+          br
+          input#answer(type='text', value='', name='lname')
+          input#answer(type='hidden', value='', name='answer')
+          input(type='hidden', value='', name='question')
+          input(type='hidden', value= email, name='email')
+          br
+          br
+          input(type='submit', value='Find')
+    div
+      br
+      br
+      a(href='login') Login
+  #footer
+    div
+      div
